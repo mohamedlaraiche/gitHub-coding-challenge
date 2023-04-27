@@ -11,10 +11,10 @@ const App = () => {
     const getData = async () => {
       try {
         const res = await axios.get(
-          `https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=${page}}`
+          `https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=${page}`
         );
         const data = await res.data;
-        setData(data.items);
+        setData((prevData) => [...prevData, ...data.items]);
       } catch (error) {
         console.log(error.message);
       }
@@ -30,13 +30,13 @@ const App = () => {
       <InfiniteScroll
         className="cardsHolder"
         dataLength={Datas.length}
-        next={() => setPage((prevPage) => prevPage + 1)}
+        next={() => setPage(page + 1)}
         hasMore={true}
         loader={<h4>Loading...</h4>}
         endMessage={<p>No more items to load.</p>}>
-        {Datas.map((data) => (
+        {Datas.map((data, index) => (
           <Card
-            key={data.id}
+            key={index}
             name={data.full_name}
             username={data.owner.login}
             img={data.owner.avatar_url}
