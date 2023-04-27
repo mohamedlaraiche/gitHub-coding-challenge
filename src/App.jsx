@@ -2,13 +2,17 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "./components/Card";
 import "./styles/style.css";
+import { slice } from "lodash";
 
 const App = () => {
   const [Datas, setData] = useState([]);
+  const [pagination, setPagination] = useState(5);
+  const initPage = slice(Datas, 0, pagination);
+
   const getData = async () => {
     try {
       const res = await axios.get(
-        `https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=${1}`
+        `https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc`
       );
       const data = await res.data;
 
@@ -16,6 +20,10 @@ const App = () => {
     } catch (error) {
       console.log(error.message);
     }
+  };
+  const loadMore = () => {
+    setPagination(pagination + 5);
+    console.log(pagination);
   };
 
   useEffect(() => {
@@ -27,10 +35,10 @@ const App = () => {
     <section className="container app">
       <h1>GitHub Repos App</h1>
       <div className="cardsHolder">
-        {Datas.length === 0 ? (
+        {initPage.length === 0 ? (
           <p>Load...</p>
         ) : (
-          Datas.map((data) => (
+          initPage.map((data) => (
             <Card
               key={data.id}
               name={data.name}
@@ -42,6 +50,13 @@ const App = () => {
               timing={data.size}
             />
           ))
+        )}
+        {initPage.length === 0 ? (
+          ""
+        ) : (
+          <button className="LoadBtn" onClick={loadMore}>
+            Load More
+          </button>
         )}
       </div>
     </section>

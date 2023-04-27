@@ -1,6 +1,5 @@
 /* styling the card */
 .app {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,7 +19,7 @@
   width: 100%;
   margin: 40px;
   gap: 50px;
-  min-height: 85vh;
+  min-height: 55vh;
 }
 .card {
   display: flex;
@@ -62,4 +61,13 @@
 .card .moreDetailsHolder span {
   display: flex;
   align-items: center;
+}
+
+.LoadBtn {
+  padding: 10px 40px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 550;
 }
