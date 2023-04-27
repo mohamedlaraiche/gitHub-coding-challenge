@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import InfiniteScroll from "react-infinite-scroll-component";
 import Card from "./components/Card";
 import "./styles/style.css";
-import InfiniteScroll from "react-infinite-scroll-component";
 const App = () => {
   const [Datas, setData] = useState([]);
   const [page, setPage] = useState(1);
@@ -20,8 +20,6 @@ const App = () => {
       }
     };
     getData();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   return (
@@ -47,7 +45,6 @@ const App = () => {
           />
         ))}
       </InfiniteScroll>
-      <div className="cardsHolder"></div>
     </section>
   );
 };
