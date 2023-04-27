@@ -1,1 +1,0 @@
-# gitHub-coding-challenge
