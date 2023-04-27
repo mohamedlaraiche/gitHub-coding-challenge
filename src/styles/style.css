@@ -31,13 +31,14 @@
 .card .userImgHolder {
   display: flex;
   align-items: center;
+  border-right: 0.2px solid #a1a1a1;
 }
 .card .userDetailsHolder {
   display: flex;
   flex-direction: column;
   height: 100%;
   margin: 20px 0px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .card .userImgHolder .userImg {
   object-fit: cover;
@@ -70,4 +71,53 @@
   border: none;
   cursor: pointer;
   font-weight: 550;
+}
+.LoadBtn:hover {
+  opacity: 0.8;
+}
+.moreDetailsHolder .stars svg {
+  color: #d5ab55;
+  font-size: 20px;
+}
+
+.moreDetailsHolder .issues svg {
+  color: red;
+  margin: 0 3px;
+}
+
+@media (max-width: 488px) {
+  .card .userDetailsHolder {
+    margin-left: 5px;
+  }
+  .card .userImgHolder .userImg {
+    height: 200px;
+  }
+}
+
+@media (max-width: 417px) {
+  .card .userImgHolder .userImg {
+    max-width: 100%;
+    height: auto;
+  }
+  .card {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 221px) {
+  .app h1 {
+    font-size: 20px;
+  }
+  .card {
+    width: 80%;
+  }
+  .moreDetailsHolder span.time {
+    display: none;
+  }
+  .moreDetailsHolder {
+    align-items: center;
+    justify-content: center;
+  }
 }

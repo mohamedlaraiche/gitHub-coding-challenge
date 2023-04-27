@@ -36,24 +36,22 @@ const App = () => {
       <h1>GitHub Repos App</h1>
       <div className="cardsHolder">
         {initPage.length === 0 ? (
-          <p>Load...</p>
+          <p>Loading...</p>
         ) : (
           initPage.map((data) => (
             <Card
               key={data.id}
-              name={data.name}
+              name={data.full_name}
               username={data.owner.login}
               img={data.owner.avatar_url}
               desc={data.description}
               stars={data.stargazers_count}
               issues={data.open_issues_count}
-              timing={data.size}
+              timing={data.created_at}
             />
           ))
         )}
-        {initPage.length === 0 ? (
-          ""
-        ) : (
+        {initPage.length === 0 ? null : (
           <button className="LoadBtn" onClick={loadMore}>
             Load More
           </button>

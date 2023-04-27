@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
+import moment from "moment";
 import { RiStarSFill } from "react-icons/ri";
 import { GoIssueOpened } from "react-icons/go";
+
 const Card = ({ name, username, img, desc, stars, issues, timing }) => {
   return (
     <section className="card">
@@ -19,7 +21,7 @@ const Card = ({ name, username, img, desc, stars, issues, timing }) => {
             <GoIssueOpened />
             {issues}
           </span>
-          <span className="time">{timing}</span>
+          <span className="time"> {moment(timing).format("LL")}</span>
         </section>
       </main>
     </section>
