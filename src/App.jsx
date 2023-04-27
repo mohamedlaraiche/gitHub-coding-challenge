@@ -31,8 +31,8 @@ const App = () => {
           dataLength={Datas.length}
           next={() => setPage(page + 1)}
           hasMore={true}
-          loader={<h4 className="loadText">Loading...</h4>}
-          endMessage={<p>No more items to load.</p>}>
+          loader={<h4 className="loadText">Loading Repos...</h4>}
+          endMessage={<p>No more Repos to load.</p>}>
           {Datas.map((data, index) => (
             <Card
               key={index}
