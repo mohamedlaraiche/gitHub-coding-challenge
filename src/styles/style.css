@@ -20,6 +20,7 @@
   width: 100%;
   margin: 40px;
   gap: 50px;
+  min-height: 85vh;
 }
 .card {
   display: flex;
@@ -48,6 +49,9 @@
 
 .card .userDetailsHolder p {
   padding: 10px;
+}
+.card .userDetailsHolder h4 {
+  color: #727171;
 }
 .card .moreDetailsHolder {
   display: flex;
