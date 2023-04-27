@@ -1,0 +1,61 @@
+/* styling the card */
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.app h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+}
+.cardsHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 40px;
+  gap: 50px;
+}
+.card {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  box-shadow: 7px 8px 18px 6px #a1a1a1;
+  border-radius: 3px;
+}
+.card .userImgHolder {
+  display: flex;
+  align-items: center;
+}
+.card .userDetailsHolder {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 20px 0px;
+  margin-left: 20px;
+}
+.card .userImgHolder .userImg {
+  object-fit: cover;
+  max-width: 200px;
+  height: auto;
+  width: 100%;
+}
+
+.card .userDetailsHolder p {
+  padding: 10px;
+}
+.card .moreDetailsHolder {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+.card .moreDetailsHolder span {
+  display: flex;
+  align-items: center;
+}
