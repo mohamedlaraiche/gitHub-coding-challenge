@@ -10,8 +10,8 @@ const Card = ({ name, username, img, desc, stars, issues, timing }) => {
         <img src={img} alt="name" className="userImg" />
       </aside>
       <main className="userDetailsHolder">
-        <h2> {name} </h2>
-        <h4>{username}</h4>
+        <h3> {name} </h3>
+        <h5>{username}</h5>
         <p>{desc}</p>
         <section className="moreDetailsHolder">
           <span className="stars">

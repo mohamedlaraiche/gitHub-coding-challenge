@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 }
 .app h1 {
   display: flex;
@@ -11,12 +12,14 @@
   justify-content: center;
   height: 15vh;
 }
+.dataHolder {
+  width: 100%;
+}
 .cardsHolder {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
   margin: 40px 0px;
   gap: 50px;
   min-height: 55vh;
@@ -50,7 +53,7 @@
 .card .userDetailsHolder p {
   padding: 10px;
 }
-.card .userDetailsHolder h4 {
+.card .userDetailsHolder h5 {
   color: #727171;
 }
 .card .moreDetailsHolder {
@@ -118,7 +121,7 @@
   }
 }
 
-@media (max-width: 221px) {
+@media (max-width: 356px) {
   .app h1 {
     font-size: 20px;
   }
@@ -132,5 +135,14 @@
   .moreDetailsHolder {
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media (max-width: 260px) {
+  .userDetailsHolder h3 {
+    font-size: 14px;
+  }
+  .userDetailsHolder p {
+    font-size: 12px;
   }
 }

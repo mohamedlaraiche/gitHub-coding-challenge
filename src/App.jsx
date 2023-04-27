@@ -25,33 +25,35 @@ const App = () => {
   return (
     <section className="container app">
       <h1>GitHub Repos App</h1>
-      <InfiniteScroll
-        className="cardsHolder"
-        dataLength={Datas.length}
-        next={() => setPage(page + 1)}
-        hasMore={true}
-        loader={
-          <h4
-            style={{
-              textAlign: "center",
-            }}>
-            Loading...
-          </h4>
-        }
-        endMessage={<p>No more items to load.</p>}>
-        {Datas.map((data, index) => (
-          <Card
-            key={index}
-            name={data.full_name}
-            username={data.owner.login}
-            img={data.owner.avatar_url}
-            desc={data.description}
-            stars={data.stargazers_count}
-            issues={data.open_issues_count}
-            timing={data.created_at}
-          />
-        ))}
-      </InfiniteScroll>
+      <section className="dataHolder">
+        <InfiniteScroll
+          className="cardsHolder"
+          dataLength={Datas.length}
+          next={() => setPage(page + 1)}
+          hasMore={true}
+          loader={
+            <h4
+              style={{
+                textAlign: "center",
+              }}>
+              Loading...
+            </h4>
+          }
+          endMessage={<p>No more items to load.</p>}>
+          {Datas.map((data, index) => (
+            <Card
+              key={index}
+              name={data.full_name}
+              username={data.owner.login}
+              img={data.owner.avatar_url}
+              desc={data.description}
+              stars={data.stargazers_count}
+              issues={data.open_issues_count}
+              timing={data.created_at}
+            />
+          ))}
+        </InfiniteScroll>
+      </section>
     </section>
   );
 };
