@@ -30,7 +30,14 @@ const App = () => {
         dataLength={Datas.length}
         next={() => setPage(page + 1)}
         hasMore={true}
-        loader={<h4>Loading...</h4>}
+        loader={
+          <h4
+            style={{
+              textAlign: "center",
+            }}>
+            Loading...
+          </h4>
+        }
         endMessage={<p>No more items to load.</p>}>
         {Datas.map((data, index) => (
           <Card
